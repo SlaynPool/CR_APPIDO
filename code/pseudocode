@@ -1,0 +1,85 @@
+void recherche(){
+    on affiche "Recherche en Cours ...";
+    on obtient notre position GPS;
+    determiner les 3 parkings les plus proche;
+    on interroge la place dans les 3 parkings les plus proches;
+    
+    si on a parametre Handicape{
+        
+        choisir le plus proche;
+    }
+    si on a parametre Sportif{
+        si tous les parkings on moins de 50 places dispo{
+            choisir le moins plein;
+        }
+    }
+    while(true){
+    si click est presse{
+        appelle Menu();
+    }
+    afficher" Parking : ....";
+    }
+}
+
+void parametre(){
+while(true){
+    afficher les parametres;
+    if "Click" est presse{
+        appelle Menu();
+    }   
+    si on est sur Sportif{
+        si pression droite{
+            Sportif= Non;
+            mettre en gras Non;
+        }
+        si pression gauche{
+            Sportif = Oui;
+            mettre en gras Oui;
+
+        }
+
+    }
+    si on est sur handicap{
+        si pression droite{
+            Handicap= Non;
+            mettre en gras Non;
+        }
+        si pression gauche{
+            handicap = Oui;
+            mettre en gras Oui;
+
+        }
+
+
+    }
+}
+}
+void Menu(){
+        affiche le menu;
+        si on presse haut{
+            etre sur Recherche
+            afficher Recherche en gras
+        }
+        si on presse bas{
+            etre sur parametre
+            afficher parametre en gras
+        }   
+        si on est sur "Recherche ->" et que l'on "Click"{
+            
+            On appelle recherche();
+        }
+        si on est sur "parametre -> " et que l'on "Click"{
+            
+            On appelle parametre();
+        }
+}
+void setup(){
+    initialisation du GPS;
+    initialisation de l'Ecran LCD;
+    initialisation de la puce 4G;
+    initialisation du CAN pour le joystick;
+    Menu();
+
+}
+void loop(){}
+
